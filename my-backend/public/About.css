@@ -1,0 +1,193 @@
+/* Global styles */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4; /* Optional background color */
+    font-family: Arial, sans-serif;
+    flex-direction: column; /* To stack header and card vertically */
+}
+
+/* Header styles */
+#header {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    width: 100%;
+    position: fixed; /* Fix the header at the top */
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding: 10px 20px;
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Limit width for content */
+    margin: 0 auto; /* Center the content */
+}
+
+.logo img {
+    height: 80px; /* Adjust height of the logo */
+    width: auto; /* Maintain aspect ratio */
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar li a:hover {
+    color: #3498db;
+}
+
+/* Search container styles */
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.search__icon {
+    fill: #ecf0f1;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+/* Card Styling */
+.card {
+    color: #1b1b1b;
+    width: 300px; /* Adjust width for better fit */
+    height: 400px; /* Adjust height for better fit */
+    position: relative;
+    padding: 16px;
+    background: #ff930f;
+    background-blend-mode: multiply;
+    background: linear-gradient(to top, #ff930f, #ffcc33);
+    overflow: hidden;
+    transform-style: preserve-3d; /* Required for 3D effect */
+    margin-top: 120px; /* Ensure space between the header and the card */
+    border-radius: 8px;
+    box-shadow: none; /* Remove shadow */
+}
+
+/* Card front and back styling */
+.card-front, .card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+}
+
+.card-front {
+    z-index: 2;
+}
+
+.card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire front of the card */
+    border-radius: 8px;
+    z-index: 0;
+}
+
+/* Adding overlay to card front */
+.card-front::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent overlay */
+    z-index: 1;
+    border-radius: 8px;
+}
+
+/* Name container styles */
+.card-front .name-container {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    right: 10px;
+    z-index: 2;
+    text-align: center;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.title::after {
+    content: "";
+    display: block;
+    width: 50%;
+    border-radius: 50%;
+    height: 2px;
+    margin: 2px auto;
+    background-color: #fff;
+}
+
+/* Hover effect to flip the card */
+.card:hover .card-front {
+    transform: rotateY(180deg);
+}
+
+.card:hover .card-back {
+    transform: rotateY(0deg);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .card {
+        width: 250px; /* Smaller width on smaller screens */
+        height: 350px; /* Smaller height on smaller screens */
+    }
+
+    .logo img {
+        height: 60px; /* Even smaller logo on smaller screens */
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px; /* Stack menu items on small screens */
+    }
+
+    .search-container {
+        margin-top: 10px; /* Adjust the search bar on small screens */
+    }
+}

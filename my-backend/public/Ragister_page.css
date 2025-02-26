@@ -1,0 +1,19 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    height: 100vh;
+    max-width: 100%;
+    margin: 30%;
+    background: linear-gradient(to right, #387adf, #50c4ed);
+    justify-content: center;
+    align-items: center;
+    }
+
+.container{
+    
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combee</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+    <link rel="stylesheet" href="Feedback.css">
+    <style>
+        #header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+        }
+        #header a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        #navbar {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+        #navbar li {
+            display: inline;
+        }
+        #navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 10px;
+            transition: background-color 0.3s;
+        }
+        #navbar a:hover, #navbar a.active {
+            background-color: #555;
+            border-radius: 5px;
+        }
+        .logo {
+            width: 50px;
+            height: 50px;
+            vertical-align: middle;
+        }
+        .feedback-form {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .feedback-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .feedback-form input, .feedback-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .feedback-form button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .feedback-form button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <section id="header">
+        <a href=""><img src="logo.jpg" class="logo" alt="COMBEE Logo"> COMBEE</a>
+        <ul id="navbar">
+            <li><a class="active" href="Combee.html">Home</a></li>
+            <li><a href="Shop.html">Shop</a></li>
+            <li><a href="About.html">About-us</a></li>
+            <li><a href="Order.html">Order-page</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            <li><a href="Feedback.html">Feedback</a></li>
+            <li><a href="Cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+        </ul>
+    </section>
+    <section class="feedback-form">
+        <h2>Feedback</h2>
+        <form action="submit_feedback.php" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Feedback" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section></form>
+</body>
+</html>

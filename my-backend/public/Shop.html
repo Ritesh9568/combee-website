@@ -1,0 +1,322 @@
+<!-- From Uiverse.io by ashwin_5681 --> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combee</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+    <link rel="stylesheet" href="Shop.css">
+    <style>
+        /* Card styling */
+        .card {
+            width: 100%;
+            height: 100%;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            color: white;
+            text-align: center;
+        }
+
+        /* Card paragraph styling */
+        .card p {
+            font-size: 14px;
+            color: white;
+        }
+
+        /* Slider container styling */
+        .slider {
+            width: 100%;
+            height: var(--height);
+            overflow: hidden;
+            mask-image: linear-gradient(to right, transparent, #000 10% 90%, transparent);
+        }
+
+        /* Slider list styling */
+        .slider .list {
+            display: flex;
+            width: 100%;
+            min-width: calc(var(--width) * var(--quantity));
+            position: relative;
+        }
+
+        /* Slider item styling */
+        .slider .list .item {
+            width: var(--width);
+            height: var(--height);
+            position: absolute;
+            left: 100%;
+            animation: autoRun 10s linear infinite;
+            transition: filter 0.5s;
+            animation-delay: calc((10s / var(--quantity)) * (var(--position) - 1) - 10s) !important;
+        }
+
+        /* Slider item image styling */
+        .slider .list .item img {
+            width: 100%;
+        }
+
+        /* Keyframes for auto-running the slider */
+        @keyframes autoRun {
+            from {
+                left: 100%;
+            }
+            to {
+                left: calc(var(--width) * -1);
+            }
+        }
+
+        /* Pause animation and apply grayscale on hover */
+        .slider:hover .item {
+            animation-play-state: paused !important;
+            filter: grayscale(1);
+        }
+
+        /* Remove grayscale on item hover */
+        .slider .item:hover {
+            filter: grayscale(0);
+        }
+
+        /* Reverse animation for slider */
+        .slider[reverse="true"] .item {
+            animation: reversePlay 10s linear infinite;
+        }
+
+        /* Keyframes for reverse animation */
+        @keyframes reversePlay {
+            from {
+                left: calc(var(--width) * -1);
+            }
+            to {
+                left: 100%;
+            }
+        }
+
+        /* Footer styling */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Footer list styling */
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        /* Footer list item styling */
+        footer ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        /* Footer list item link styling */
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Footer social media link styling */
+        footer .social-media a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="header">
+        <a href=""><img src="logo.jpg" class="logo" alt="COMBEE Logo" style="width: 50px; height: 50px; vertical-align: middle;"> COMBEE</a>
+        <ul id="navbar">
+            <li><a class="active" href="Combee.html">Home</a></li>
+            <li><a href="Shop.html">Shop</a></li>
+            <li><a href="About.html">About-us</a></li>
+            <li><a href="Order.html">Order-page</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            <li><a href="Feedback.html">Feedback</a></li>
+            <li><a href="Cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+        </ul>
+    </section>
+
+    <!-- From Uiverse.io by ashwin_5681 --> 
+    <div class="slider" style="--width: 200px; --height: 200px; --quantity: 9;">
+        <div class="list">
+            <div class="item" style="--position: 1">
+                <div class="card" style="background: linear-gradient(to right, #ff7e5f, #feb47b)">
+                    <img src="t1.png" alt="Image 1">
+                </div>
+            </div>
+            <div class="item" style="--position: 2">
+                <div class="card" style="background: linear-gradient(to right, #6a11cb, #2575fc)">
+                    <img src="t2.png" alt="Image 2">
+                </div>
+            </div>
+            <div class="item" style="--position: 3">
+                <div class="card" style="background: linear-gradient(to right, #00c6ff, #0072ff)">
+                    <img src="t3.png" alt="Image 3">
+                </div>
+            </div>
+            <div class="item" style="--position: 4">
+                <div class="card" style="background: linear-gradient(to right, #ff512f, #dd2476)">
+                    <img src="t4.png" alt="Image 4">
+                </div>
+            </div>
+            <div class="item" style="--position: 5">
+                <div class="card" style="background: linear-gradient(to right, #ffb6c1, #ff69b4)">
+                    <img src="t5.png" alt="Image 5">
+                </div>
+            </div>
+            <div class="item" style="--position: 6">
+                <div class="card" style="background: linear-gradient(to right, #ff9a8b, #ffc3a0)">
+                    <img src="t6.png" alt="Image 6">
+                </div>
+            </div>
+            <div class="item" style="--position: 7">
+                <div class="card" style="background: linear-gradient(to right, #a1c4fd, #c2e9fb)">
+                    <img src="t7.png" alt="Image 7">
+                </div>
+            </div>
+            <div class="item" style="--position: 8">
+                <div class="card" style="background: linear-gradient(to right, #fbc2eb, #a18cd1)">
+                    <img src="t8.png" alt="Image 8">
+                </div>
+            </div>
+            <div class="item" style="--position: 9">
+                <div class="card" style="background: linear-gradient(to right, #a1c4fd, #c2e9fb)">
+                    <img src="s6.png" alt="Image 9">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+
+    <div class="slider" style="--width: 200px; --height: 200px; --quantity: 9;">
+        <div class="list">
+            <div class="item" style="--position: 1">
+                <div class="card" style="background: linear-gradient(to right, #ff7e5f, #feb47b)">
+                    <img src="t9.jpg" alt="Image 10">
+                </div>
+            </div>
+            <div class="item" style="--position: 2">
+                <div class="card" style="background: linear-gradient(to right, #6a11cb, #2575fc)">
+                    <img src="l1.png" alt="Image 11">
+                </div>
+            </div>
+            <div class="item" style="--position: 3">
+                <div class="card" style="background: linear-gradient(to right, #00c6ff, #0072ff)">
+                    <img src="l2.png" alt="Image 12">
+                </div>
+            </div>
+            <div class="item" style="--position: 4">
+                <div class="card" style="background: linear-gradient(to right, #ff512f, #dd2476)">
+                    <img src="l3.png" alt="Image 13">
+                </div>
+            </div>
+            <div class="item" style="--position: 5">
+                <div class="card" style="background: linear-gradient(to right, #ffb6c1, #ff69b4)">
+                    <img src="l4.png" alt="Image 14">
+                </div>
+            </div>
+            <div class="item" style="--position: 6">
+                <div class="card" style="background: linear-gradient(to right, #ff9a8b, #ffc3a0)">
+                    <img src="l5.png" alt="Image 15">
+                </div>
+            </div>
+            <div class="item" style="--position: 7">
+                <div class="card" style="background: linear-gradient(to right, #a1c4fd, #c2e9fb)">
+                    <img src="l6.png" alt="Image 16">
+                </div>
+            </div>
+            <div class="item" style="--position: 8">
+                <div class="card" style="background: linear-gradient(to right, #fbc2eb, #a18cd1)">
+                    <img src="l7.png" alt="Image 17">
+                </div>
+            </div>
+            <div class="item" style="--position: 9">
+                <div class="card" style="background: linear-gradient(to right, #a1c4fd, #c2e9fb)">
+                    <img src="s7.png" alt="Image 18">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+
+    <div class="slider" style="--width: 200px; --height: 200px; --quantity: 9;">
+        <div class="list">
+            <div class="item" style="--position: 1">
+                <div class="card" style="background: linear-gradient(to right, #ff7e5f, #feb47b)">
+                    <img src="l8.png" alt="Image 19">
+                </div>
+            </div>
+            <div class="item" style="--position: 2">
+                <div class="card" style="background: linear-gradient(to right, #6a11cb, #2575fc)">
+                    <img src="l9.png" alt="Image 20">
+                </div>
+            </div>
+            <div class="item" style="--position: 3">
+                <div class="card" style="background: linear-gradient(to right, #00c6ff, #0072ff)">
+                    <img src="l10.png" alt="Image 21">
+                </div>
+            </div>
+            <div class="item" style="--position: 4">
+                <div class="card" style="background: linear-gradient(to right, #ff512f, #dd2476)">
+                    <img src="s1.png" alt="Image 22">
+                </div>
+            </div>
+            <div class="item" style="--position: 5">
+                <div class="card" style="background: linear-gradient(to right, #ffb6c1, #ff69b4)">
+                    <img src="s2.png" alt="Image 23">
+                </div>
+            </div>
+            <div class="item" style="--position: 6">
+                <div class="card" style="background: linear-gradient(to right, #ff9a8b, #ffc3a0)">
+                    <img src="s3.png" alt="Image 24">
+                </div>
+            </div>
+            <div class="item" style="--position: 7">
+                <div class="card" style="background: linear-gradient(to right, #a1c4fd, #c2e9fb)">
+                    <img src="s4.png" alt="Image 25">
+                </div>
+            </div>
+            <div class="item" style="--position: 8">
+                <div class="card" style="background: linear-gradient(to right, #fbc2eb, #a18cd1)">
+                    <img src="s5.png" alt="Image 26">
+                </div>
+            </div>
+            <div class="item" style="--position: 9">
+                <div class="card" style="background: linear-gradient(to right, #a1c4fd, #c2e9fb)">
+                    <img src="s8.png" alt="Image 27">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+
+    <footer>
+        <p>&copy; 2023 Combee. All rights reserved.</p>
+        <ul>
+            <li><a href="Privacy.html">Privacy Policy</a></li>
+            <li><a href="Terms.html">Terms of Service</a></li>
+            <li><a href="Contact.html">Contact Us</a></li>
+        </ul>
+        <div class="social-media">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </footer>
+</body>
+</html>
