@@ -1,413 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Combee</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
-        <link rel="stylesheet" href="Combee.css">
-        <script>
-            // Fetch data from backend
-            fetch("http://localhost:5001/api/message")
-                .then(response => response.json()) // Convert response to JSON
-                .then(data => {
-                    document.getElementById("message").innerText = data.message; // Show message
-                })
-                .catch(error => console.error("Error fetching data:", error)); // Handle errors
-        </script>
-    
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combee</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+    <link rel="stylesheet" href="Combee.css">
+</head>
+<body>
 
-    <body>
+<section id="header">
+    <a href=""><img src="image/logo.jpg" class="logo" alt="COMBEE Logo" style="width: 50px; height: 50px; vertical-align: middle;"> COMBEE</a>
+    <ul id="navbar">
+        <li><a class="active" href="index.html">Home</a></li>
+        <li class="dropdown">
+            <a href="Shop.html">Shop &#9662;</a>
+            <div class="dropdown-content">
+                <a href="Kids.html">Kids</a>
+                <a href="Adult.html">Adults</a>
+                <a href="Seniors.html">Seniors</a>
+            </div>
+        </li>
+        <li><a href="Loginpage.html">Login </a></li>
+        <li><a href="About.html">About-us</a></li>
+        <li><a href="Order.html">Order-page</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="Cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+    </ul>
+</section>
 
-        <section id="header">
-            <a href="Combee.html"><img src="logo.jpg" class="logo" alt="Combee Logo"height="50px" width="50px" >COMBEE</a>
-            <ul id="navbar">
-                <li><a href="Combee.html">Home</a></li>
-                        <li><a href="Shop.html">Shop</a></li>
-                        <li><a href="About.html">About-us</a></li>
-                        <li><a href="Order.html">Order-page</a></li>
-                        <li><a href="Contact.html">Contact</a></li>
-                        <li><a href="Feedback.html">Feedback</a></li>
-                        <li><a href="loginpage.html">Login</a></li>
-                        <li><a href="SignUp.html">Sign Up</a></li>
-                        <li><a href=""><i class="fa-solid fa-cart-shopping"></i></a></li>
-                    </ul>
-        </section>
+    <section id="hero">
+        <h4>Trade-In-Offer</h4>
+        <h2>Super Value Deals</h2>
+        <h1>On All Products</h1>
+        <p>Save more with coupons & up to 70% off!</p>
+        <button>Shop Now</button>
+    </section>
 
-        <section id="hero">
-            <h4>Trade-In-Offer</h4>
-            <h2>Super Value Deals</h2>
-            <h1>On All Products</h1>
-            <p>Save more with coupons & up to 70% off!</p>
-            <button>Shop Now</button>
-        </section>
-  <table>
-     <tr>
-        <td>
-        <section id="feature" class="section-p1">
+    <section id="feature" class="section-p1">
+        <div class="feature-container" style="display: flex; flex-direction: column; align-items: center;"></div>
             <div class="fe-box">
-                <img src="free-shipping.png" height="100" width="100">
+                <img src="image/free-shipping.png" height="100" width="100">
                 <h6>Free Shipping</h6>
             </div>
-        </section>
-    </td>
-    <td>
-        <section id="feature" class="section-p1">
             <div class="fe-box">
-                <img src="online-order.png" height="100" width="100">
+                <img src="image/online-order.png" height="100" width="100">
                 <h6>Online Order</h6>
             </div>
-        </section>
-    </td>
-    <td>
-        <section id="feature" class="section-p1">
             <div class="fe-box">
-                <img src="save-money.png" height="100" width="100">
+                <img src="image/save-money.png" height="100" width="100">
                 <h6>Save Money</h6>
             </div>
-        </section>
-    </td>
-    <td>
-        <section id="feature" class="section-p1">
             <div class="fe-box">
-                <img src="promotion.png" height="100" width="100">
+                <img src="image/promotion.png" height="100" width="100">
                 <h6>Promotions</h6>
             </div>
-        </section>
-    </td>
-    <td>
-        <section id="feature" class="section-p1">
             <div class="fe-box">
-                <img src="happy-sell.png" height="100" width="100">
+                <img src="image/happy-sell.png" height="100" width="100">
                 <h6>Happy Sell</h6>
             </div>
-        </section>
-    </td>
-    <td>
-        <section id="feature" class="section-p1">
             <div class="fe-box">
-                <img src="service24.png" height="100" width="100">
+                <img src="image/service24.png" height="100" width="100">
                 <h6>24/7 Support</h6>
             </div>
-        </section>
-    </tr>  
-</table>
-
-        <section id="Product1" class="section-p1">
-            <h2>Featured Products</h2>
-            <p>Summer Collection New Modern Design</p>
-            <div class="pro-container">
-                <div class="pro">
-                    <img src="t1.png" alt="">
-                    <div class="des">
-                        <span>Combee</span>
-                        <h5>Cartoons Astronaut T-Shirt</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$78</h4>
-                    </div>
-                    <a class="cart" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+    </section>
+    <section id="Product1" class="section-p1">
+        <h2>Featured Products</h2>
+        <p>Summer Collection New Modern Design</p>
+        <div class="pro-container" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+            <div class="pro" style="flex: 1 1 30%; box-sizing: border-box; padding: 10px;">
+            <img src="image/gents/t1.png" alt="T-Shirt" style="width: 100%; height: auto;">
+            <div class="des">
+                <span>Combee</span>
+                <h5>Cartoon Astronaut T-Shirt</h5>
+                <div class="star">
+                <i class="fas fa-star"> </i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
                 </div>
-
-                <div class="pro">
-                    <img src="t2.png" alt="">
-                    <div class="des">
-                        <span>Combee</span>
-                        <h5>Cartoons Astronaut T-Shirt</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$78</h4>
-                    </div>
-                    <a class="cart" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-
-                <div class="pro">
-                    <img src="t3.png" alt="">
-                    <div class="des">
-                        <span>Combee</span>
-                        <h5>Cartoons Astronaut T-Shirt</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$78</h4>
-                    </div>
-                    <a class="cart" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-
-                <div class="pro">
-                    <img src="t4.png" alt="">
-                    <div class="des">
-                        <span>Combee</span>
-                        <h5>Cartoons Astronaut T-Shirt</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$78</h4>
-                    </div>
-                    <a class="cart" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-
-                <div class="pro">
-                    <img src="t5.png" alt="">
-                    <div class="des">
-                        <span>Combee</span>
-                        <h5>Cartoons Astronaut T-Shirt</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$78</h4>
-                    </div>
-                    <a class="cart" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-
-                <div class="pro">
-                    <img src="t6.png" alt="">
-                    <div class="des">
-                        <span>Combee</span>
-                        <h5>Cartoons Astronaut T-Shirt</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$78</h4>
-                    </div>
-                    <a class="cart" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-
-                <div class="pro">
-                    <img src="t7.png" alt="">
-                    <div class="des">
-                        <span>Combee</span>
-                        <h5>Cartoons Astronaut T-Shirt</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$78</h4>
-                    </div>
-                    <a class="cart" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-
-                <div class="pro">
-                    <img src="t8.png" alt="">
-                    <div class="des">
-                        <span>Combee</span>
-                        <h5>Cartoons Astronaut T-Shirt</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$78</h4>
-                    </div>
-                    <a class="cart" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
+                <h4>500rs</h4>
             </div>
-        </section>
-
-        <section id="banner" class="section-m1">
-            <h4>Repair Services</h4>
-            <h2>Up to <span>70% off </span> All T-Shirts & Accessories</h2>
-            <button class="normal">Explore More</button>
-        </section>
-
-        <section id="Product2" class="section-p1">
-            <h2>New Arrivals</h2>
-            <p>Summer Collection New Modern Design</p>
-            <div class="pro-container">
-                <div class="pro">
-                    <img src="t1.png" alt="">
-                    <div class="des">
-                        <span>Combee</span>
-                        <h5>Cartoons Astronaut T-Shirt</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$78</h4>
-                    </div>
-                    <a class="cart" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-
-                <div class="pro">
-                    <img src="t2.png" alt="">
-                    <div class="des">
-                        <span>Combee</span>
-                        <h5>Cartoons Astronaut T-Shirt</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$78</h4>
-                    </div>
-                    <a class="cart" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-
-                <div class="pro">
-                    <img src="t3.png" alt="">
-                    <div class="des">
-                        <span>Combee</span>
-                        <h5>Cartoons Astronaut T-Shirt</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$78</h4>
-                    </div>
-                    <a class="cart" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-
-                <div class="pro">
-                    <img src="t4.png" alt="">
-                    <div class="des">
-                        <span>Combee</span>
-                        <h5>Cartoons Astronaut T-Shirt</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$78</h4>
-                    </div>
-                    <a class="cart" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-
-                <div class="pro">
-                    <img src="t5.png" alt="">
-                    <div class="des">
-                        <span>Combee</span>
-                        <h5>Cartoons Astronaut T-Shirt</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$78</h4>
-                    </div>
-                    <a class="cart" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-
-                <div class="pro">
-                    <img src="t6.png" alt="">
-                    <div class="des">
-                        <span>Combee</span>
-                        <h5>Cartoons Astronaut T-Shirt</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$78</h4>
-                    </div>
-                    <a class="cart" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-
-                <div class="pro">
-                    <img src="t7.png" alt="">
-                    <div class="des">
-                        <span>Combee</span>
-                        <h5>Cartoons Astronaut T-Shirt</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$78</h4>
-                    </div>
-                    <a class="cart" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-
-                <div class="pro">
-                    <img src="t8.png" alt="">
-                    <div class="des">
-                        <span>Combee</span>
-                        <h5>Cartoons Astronaut T-Shirt</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$78</h4>
-                    </div>
-                    <a class="cart" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
+            <a class="cart" href="Cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
             </div>
-        </section>
-
-        <section id="sm-banner" class="section-p1">
-            <div class="banner-box">
-                <h4>Crazy Deals</h4>
-                <h2>buy 1 get 1 Free</h2>
-                <span>The best classic dress is on sale at care</span>
-                <button class="white">Learn More</button>
+            <!-- Add more products here -->
+            <div class="pro" style="flex: 1 1 30%; box-sizing: border-box; padding: 10px;">
+            <img src="image/gents/t2.png" alt="T-Shirt" style="width: 100%; height: auto;">
+            <div class="des">
+                <span>Combee</span>
+                <h5>Cartoon Astronaut T-Shirt</h5>
+                <div class="star">
+                <i class="fas fa-star"> </i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                </div>
+                <h4>450rs</h4>
             </div>
-
-            <div class="banner-box banner-box2">
-                <h4>Spring/Summer</h4>
-                <h2>Upcoming Season</h2>
-                <span>The best classic dress is on sale at care</span>
-                <button class="white">Collection</button>
+            <a class="cart" href="Cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
             </div>
-        </section>
-
-        <section id="banner3">
-            <div class="banner-box">
-                <h2>SEASONAL SALE</h2>
-                <h3>Winter Collection -50% Off</h3>
+            <div class="pro" style="flex: 1 1 30%; box-sizing: border-box; padding: 10px;">
+            <img src="image/gents/t3.png" alt="T-Shirt" style="width: 100%; height: auto;">
+            <div class="des">
+                <span>Combee</span>
+                <h5>Cartoon Astronaut T-Shirt</h5>
+                <div class="star">
+                <i class="fas fa-star"> </i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                </div>
+                <h4>600rs</h4>
             </div>
-        </section>
+            <a class="cart" href="Cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+        </div>
+    </section>
 
-        <script src="Script.js"></script>
-    </body>
+    <section id="banner" class="section-m1">
+        <h4>Repair Services</h4>
+        <h2>Up to <span>70% off</span> All T-Shirts & Accessories</h2>
+        <button class="normal">Explore More</button>
+    </section>
+
+  
+    <footer>
+        <div class="footer-content" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+            <h3>Combee</h3>
+            <p>Your one-stop shop for all your needs. Follow us on social media for the latest updates and offers.</p>
+            <ul class="socials" style="list-style: none; padding: 6px; display: flex; flex-direction: row; align-items: center;">
+                <li style="margin: 10px 0;"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li style="margin: 10px 0;"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li style="margin: 10px 0;"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li style="margin: 10px 0;"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                <li style="margin: 10px 0;"><a href="#"><i class="fab fa-youtube"></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom" style="text-align: center;">
+            <p>&copy; 2023 Combee. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <scr script src="Script.js"></scr>
+</body>
 </html>

@@ -1,86 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title> Fashion Fusion </title>
-        <meta name="viewport" content="width=device-width, intial-scale=1.0">
-        <link rel="stylesheet" href="Contact.css">
-        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
-    </head>
-    <body>
-        
-        <section id="section-wrapper">
-            <div class="box-wrapper">
-                <div class="info-wrap">
-                    <h2 class="info-title">Contact Information</h2>
-                    <h3 class="info-sub-tital">Fill up the form & our team will get back to you within 24 hours</h3>
-                    <ul class="info-details">
-                        <li>
-                            <i class="ri-phone-fill"></i>
-                            <span>Phone:-</span><a href="tel:+123456789">1234567890</a>
-                        </li>
+<head>
+    <meta charset="utf-8">
+    <title> Fashion Fusion </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Contact.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
 
-                        <li>
-                            <i class="ri-mail-fill"></i>
-                            <span>Email:-</span><a href="prachikamble19@gmail.com">prachikamble19@gmail.com</a>
-                        </li>
-
-                        <li>
-                            <i class="ri-globe-fill"></i>
-                            <span>Website:-</span><a href="tel:+123456789">1234567890</a>
-                        </li>
-                    </ul>
-
-                                        <!-- SOCIAL-MEDIA -->
-                    <ul class="social-icons">
-                        <li>
-                            <a href="">
-                                <i class="ri-facebook-circle-fill"></i>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#">
-                                <i class="ri-twitter-fill"></i>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#">
-                                <i class="ri-linkedin-fill"></i>
-                            </a>
-                        </li>
-                    </ul>
+    <section id="header">
+        <a href=""><img src="image/logo.jpg" class="logo" alt="COMBEE Logo" style="width: 50px; height: 50px; vertical-align: middle;"> COMBEE</a>
+        <ul id="navbar">
+            <li><a class="active" href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="Shop.html">Shop &#9662;</a>
+                <div class="dropdown-content">
+                    <a href="Kids.html">Kids</a>
+                    <a href="Adult.html">Adults</a>
+                    <a href="Seniors.html">Seniors</a>
                 </div>
+            </li>
+            <li><a href="Loginpage.html">Login</a></li>
+            <li><a href="About.html">About-us</a></li>
+            <li><a href="Order.html">Order-page</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            <li><a href="Cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+        </ul>
+    </section>
 
-                                        <!-- INFORMATION -->
-                <div class="form-wrap">
-                    <form action="#" method="post">
-                        <h2 class="form-tital">Send us a Massage</h2>
-                        <div class="form-field">
-                            <div class="form-group">
-                                <input type="text" class="fname" placeholder="First Name">
-                            </div>
-
-                            <div class="form-group">
-                                <input type="text" class="iname" placeholder="Last Name">
-                            </div>
-
-                            <div class="form-group">
-                                <input type="email" class="email" placeholder="Mail">
-                            </div>
-
-                            <div class="form-group">
-                                <input type="number" class="phone" placeholder="+91">
-                            </div>
-
-                            <div class="form-group">
-                                <textarea name="massage" id="" placeholder="Write Your Massage"></textarea>
-                            </div>
-                        </div>
-                        <input type="submit" value="Send Massage" class="submit-button">
-                    </form>
-                </div>
+    <section id="section-wrapper">
+        <div class="box-wrapper">
+            <div class="info-wrap">
+                <h2 class="info-title">Contact Information</h2>
+                <h3 class="info-sub-tital">Fill up the form & our team will get back to you within 24 hours</h3>
+                <ul class="info-details">
+                    <li><i class="ri-phone-fill"></i><span>Phone:-</span><a href="tel:+123456789">1234567890</a></li>
+                    <li><i class="ri-mail-fill"></i><span>Email:-</span><a href="mailto:shurtigunde@gmail.com">shurtigunde@gmail.com</a></li>
+                    <li><i class="ri-globe-fill"></i><span>Website:-</span><a href="#">www.yourwebsite.com</a></li>
+                </ul>
+                <ul class="social-icons">
+                    <li><a href="https://www.facebook.com/login.php/"><i class="ri-facebook-circle-fill"></i></a></li>
+                    <li><a href="https://x.com/"><i class="ri-twitter-fill"></i></a></li>
+                    <li><a href="https://www.linkedin.com/"><i class="ri-linkedin-fill"></i></a></li>
+                </ul>
             </div>
-        </section>
-    </body>
+
+            <div class="form-wrap">
+                <form action="#">
+                    <h2 class="form-tital">Send us a Message</h2>
+                    <div class="form-field">
+                        <div class="form-group"><input type="text" class="fname" name="firstName" placeholder="First Name"></div>
+                        <div class="form-group"><input type="text" class="iname" name="lastName" placeholder="Last Name"></div>
+                        <div class="form-group"><input type="email" class="email" name="email" placeholder="Mail"></div>
+                        <div class="form-group"><input type="number" class="phone" name="phone" placeholder="+91"></div>
+                        <div class="form-group"><textarea name="message" placeholder="Write Your Feedback to help to improve more"></textarea></div>
+                    </div>
+                    <input type="submit" value="Send Message" class="submit-button">
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.querySelector("form");
+    
+            form.addEventListener("submit", async function (event) {
+                event.preventDefault(); // Prevent page reload
+    
+                // Get form data
+                const firstName = document.querySelector(".fname").value;
+                const lastName = document.querySelector(".iname").value;
+                const email = document.querySelector(".email").value;
+                const phone = document.querySelector(".phone").value;
+                const message = document.querySelector("textarea").value;
+    
+                if (!firstName || !email || !message) {
+                    alert("Please fill in all required fields.");
+                    return;
+                }
+    
+                const contactInfo = { firstName, lastName, email, phone, message };
+    
+                try {
+                    const response = await fetch("http://localhost:5000/api/contact", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(contactInfo),
+                    });
+    
+                    const result = await response.json();
+                    alert(result.message);
+                    form.reset(); // Clear the form
+                } catch (error) {
+                    alert("Error submitting form. Please try again later.");
+                    console.error("Error:", error);
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>

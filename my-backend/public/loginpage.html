@@ -3,62 +3,143 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE-edge">
-        <meta name="Viewport" content="Width-device-width,initial-scale-1.0">
-        <title>Responsive login and Signup form</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Responsive Login and Signup Form</title>
 
-        <!--CSS-->
-        <link rel="Stylesheet" href="login.css">
-        <!--Boxicons CSS-->
+        <!-- CSS -->
+        <link rel="stylesheet" href="login.css">
+        <!-- Boxicons CSS -->
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
+        <style>
+        body {
+            background-image: url('image/logo/1.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
+            
+            .card {
+                --main-col: #0b0b0b;
+                --bg-col: #403c40;
+                --bg-field: #e7e7ef;
+                width: 300px;
+                padding: 2rem 1.5rem;
+                text-align: center;
+                background: var(--bg-col);
+                border-radius: 10px;
+                border: 1px solid var(--main-col);
+                user-select: none;
+                margin: 50px auto;
+            }
+            
+            .field {
+                margin-top: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding-left: 0.5rem;
+                gap: 0.5rem;
+                background-color: var(--bg-field);
+                border-radius: 4px;
+            }
+            
+            .input-icon {
+                width: 1em;
+                color: var(--main-col);
+                fill: var(--main-col);
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .input-field {
+                background: transparent;
+                border: none;
+                outline: none;
+                width: 100%;
+                color: var(--main-col);
+                padding: 0.5em 1em 0.5em 0;
+                caret-color: var(--main-col);
+                font-size: 1em;
+            }
+            
+            .btn {
+                margin: 1rem;
+                border: none;
+                border-radius: 4px;
+                font-weight: bold;
+                font-size: 0.8em;
+                text-transform: uppercase;
+                padding: 0.6em 1.2em;
+                background-color: var(--main-col);
+                color: var(--bg-col);
+                box-shadow: 0 8px 24px 0 rgb(255 235 167 / 20%);
+                transition: all 0.3s ease-in-out;
+                cursor: pointer;
+                font-size: 1em;
+            }
+            
+            .btn:hover {
+                background-color: var(--bg-field);
+                color: var(--main-col);
+            }
+        </style>
     </head>
     <body>
-        <section class="container forms">
-            <div class="form login">
-                <div class="form-content">
-                    <header>Login</header>
-                    <form action="#">
-                        <div class="field input-field">
-                            <input type="email" placeholder="email" class="input">
-                        </div>
-                        <div class="field input-field">
-                            <input type="password" placeholder="password" class="password">
-                            <i class='bx bx-hide eye-icon'></i>
-                        </div>
-                        <div class="form-link">   
-                            <a href="#" class="forgot-pass">Forgot password?</a>
-                        </div>
-                        <div class="field button-field">
-                            <button>Login</button>
-                        </div>
-                        
-                    </form>
-                    <div class="form-link">
-                        <span>Don't have an account?</span> <a href="signup.html" class="link Signup-link">Signup</a>
+        <section id="header">
+            <a href=""><img src="image/logo.jpg" class="logo" alt="COMBEE Logo" style="width: 50px; height: 50px; vertical-align: middle;"> COMBEE</a>
+            <ul id="navbar">
+                <li><a class="active" href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="Shop.html">Shop &#9662;</a>
+                    <div class="dropdown-content">
+                        <a href="Kids.html">Kids</a>
+                        <a href="Adult.html">Adults</a>
+                        <a href="Seniors.html">Seniors</a>
                     </div>
-                </div>
-                <div class="line"></div>
-
-                <div class="media-options">
-                    <a href="#" class="field facebook">
-                        <i class='bx bxl-facebook facebook-icon'></i>
-                        <span>Login with Facebook</span>
-                    </a>
-                </div>
-                <div class="media-options">
-                    <a href="#" class="field google">
-                        <img src="google.png" alt="" class="google-img">
-                        <span>Login with Google</span>
-                    </a>
-                </div>
-            </div>
-
-           
-            
-            
+                </li>
+                <li><a href="Loginpage.html">Login</a></li>
+                <li><a href="About.html">About-us</a></li>
+                <li><a href="Order.html">Order-page</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="Cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+            </ul>
         </section>
-
-        <!--JavaScript-->
-        <script src="script.js"></script>
+        
+        <div class="card">
+            <h4 class="title">Log In!</h4>
+            <form id="loginForm">
+                <label class="field" for="email">
+                    <span class="input-icon">@</span>
+                    <input autocomplete="off" id="email" placeholder="Email" class="input-field" name="email" type="email" required>
+                </label>
+                <label class="field" for="password">
+                    <span class="input-icon">🔒</span>
+                    <input id="password" placeholder="Password" class="input-field" name="password" type="password" required>
+                </label>
+                <button class="btn" type="submit">Login</button><br>
+                <a class="btn-link" style="color: black;" href="Ragister_page.html">Create New Account</a>
+            </form>
+        </div>
+        
+        <script>
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+        
+            const response = await fetch('http://localhost:5000/auth/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password })
+            });
+        
+            const data = await response.json();
+            alert(data.message);
+        });
+        </script>
     </body>
-</html>          
+</html>

@@ -1,122 +1,166 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title> Combee </title>
-        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Combee</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Ragister_page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url('image/logo/2.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        
+       
+        }
+        #header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 80px;
+            background: #E3E6F3;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+            z-index: 999;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+        #navbar {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            background-color: #E3E6F3;
+            justify-content: center;
+        }
+        #navbar li {
+            position: relative;
+        }
+        #navbar a {
+            display: block;
+            padding: 15px;
+            color: rgb(13, 11, 11);
+            text-decoration: none;
+        }
+        #navbar a:hover {
+            background-color: #555;
+        }
+      /* Dropdown menu styling */
+.dropdown {
+    position: relative;
+}
 
-                        <!-- CSS LINK -->
-        <link rel="stylesheet" href="Ragister_page.css">
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f3e6e6;
+    min-width: 150px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
 
-                         <!-- ICON LINK -->
-        <!--<link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    </head>
+.dropdown-content a {
+    padding: 12px;
+    display: block;
+    color: rgb(230, 106, 106);
+    text-decoration: none;
+}
 
-                            <!-- START -->
-    <body>
-        <div class="container">
-            <h2>Registration Form</h2>
-            <form action="#">
-                <div class="user_details">
+.dropdown-content a:hover {
+    background-color: #555;
+}
 
-                    <div class="input_box">
-                        <span class="tital">Full Name</span>
-                        <div class="icon">
-                            <i class="fa-solid fa-user"></i>
-                            <input type="text" placeholder="Your Full Name"required>
-                        </div>
-                    </div>
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
-                    <div class="input_box"></div>
-                        <span class="tital">Email</span>
-                        <div class="icon">
-                            <i class="fa-solid fa-envelope"></i>
-                            <input type="text" placeholder="Your Email"required>
-                        </div>
-                    </div>
-
-                    <div class="input_box"></div>
-                        <span class="tital">Phone Number</span>
-                        <div class="icon">
-                            <i class="fa-solid fa-phone"></i>
-                            <input type="text" placeholder="Your Phone Number"required>
-                        </div>
-                    </div>
-
-                    <div class="input_box"></div>
-                        <span class="tital">Birth Date</span>
-                        <div class="icon">
-                            <i class="fa-solid fa-calendar"></i>
-                            <input type="date" placeholder="Your Birth Date"required>
-                        </div>
-                    </div>
-
-                    <div class="input_box"></div>
-                        <span class="tital">Password</span>
-                        <div class="icon">
-                            <i class="fa-solid fa-lock"></i>
-                            <input type="password" placeholder="Your Password"required>
-                        </div>
-                    </div>
-
-                    <div class="input_box"></div>
-                        <span class="tital">Confirm Password</span>
-                        <div class="icon">
-                            <i class="fa-solid fa-user-lock"></i>
-                            <input type="password" placeholder="Confirm Your Password"required>
-                        </div>
-                    </div>
-
-                    <div class="input_box"></div>
-                        <span class="tital">Address</span>
-                        <div class="icon">
-                            <i class="fa-solid fa-house-user"></i>
-                            <input type="text" placeholder="Your Current Address"required>
-                        </div>
-                    </div>
-
-                    <div class="input_box"></div>
-                        <span class="tital">Postal Code</span>
-                        <div class="icon">
-                            <i class="fa-solid fa-envelopes-bulk"></i>
-                            <input type="text" placeholder="Your Address Postal Code"required>
-                        </div>
-                    </div>
+        .container {
+            background: rgb(222, 187, 127);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <section id="header">
+        <a href=""><img src="image/logo.jpg" class="logo" alt="COMBEE Logo" style="width: 50px; height: 50px; vertical-align: middle;"> COMBEE</a>
+        <ul id="navbar">
+            <li><a class="active" href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="Shop.html">Shop &#9662;</a>
+                <div class="dropdown-content">
+                    <a href="Kids.html">Kids</a>
+                    <a href="Adult.html">Adults</a>
+                    <a href="Seniors.html">Seniors</a>
                 </div>
-
-                <div class="user_gender">
-                    <span class="title">Gender</span>
-                    <div class="gender_category">
-
-                        <label for="Male">
-                            <span>Male</span>
-                            <input type="radio" name="gender" id="Male">
-                        </label>
-
-                        <label for="Female">
-                            <span>Female</span>
-                            <input type="radio" name="gender" id="Female">
-                        </label>
-
-                        <label for="Other">
-                            <span>Other</span>
-                            <input type="radio" name="gender" id="Other">
-                        </label>
-                    </div>
-                </div>
-
-                <div class="term_policy">
-                    <p>By clicking Sign Up,you agree to our <a href="">Terms, Privacy Policy</a> & <a href="">
-                        Cookies Policy.</a>You may receive SMS notification 
-                        from us & can opt out at any
-                        time.</p>
-                </div>
-
-                <div class="button">
-                    <button type="submit">Register </button>
-                </div>
-            </form>
-        </div>
-    </body>
+            </li>
+            <li><a href="Loginpage.html">Login</a></li>
+            <li><a href="About.html">About-us</a></li>
+            <li><a href="Order.html">Order-page</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            <li><a href="Cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+        </ul>
+    </section>
+    
+    <div class="container">
+        <h2>Register</h2>
+        <form id="registerForm">
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Register</button>
+        </form>
+        <p>By clicking Sign Up, you agree to our <a href="#">Terms, Privacy Policy</a> & <a href="#">Cookies Policy</a>.</p>
+    </div>
+    
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+        
+            const response = await fetch('http://localhost:5000/auth/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, email, password })
+            });
+        
+            const data = await response.json();
+            alert(data.message);
+        });
+    </script>
+</body>
 </html>

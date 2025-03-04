@@ -1,53 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Spartan',sans-serif;
+    font-family: 'Spartan', sans-serif;
 }
 
-h1{
-    font-size: 50px;
-    line-height: 64px;
-    color: #222;
+body {
+    width: 100%;
 }
 
-h2{
-    font-size: 46px;
-    line-height: 54px;
-    color: #222;
-}
+/* Typography */
+h1 { font-size: 50px; line-height: 64px; color: #222; }
+h2 { font-size: 46px; line-height: 54px; color: #222; }
+h4 { font-size: 20px; color: #222; }
+h6 { font-weight: 700; font-size: 12px; }
+p { font-size: 16px; color: #465b52; margin: 15px 0 20px 0; }
 
-h4{
-    font-size: 20px;
-    color: #222;
-}
+/* Spacing */
+.section-p1 { padding: 40px 80px; }
+.section-m1 { margin: 40px 0; }
 
-h6{
-    font-weight: 700;
-    font-size: 12px;
-}
-
-p{
-    font-size: 16px;
-    color: #465b52;
-    margin: 15px 0 20px 0;
-}
-
-.section-p1{
-    padding: 40px 80px;
-}
-
-.section-m1{
-    margin: 40px 0;
-}
-
-button.normal{
+/* Buttons */
+button.normal, button.white {
     font-size: 14px;
     font-weight: 600;
     padding: 15px 30px;
-    color: #000;
-    background-color: #fff;
     border-radius: 4px;
     cursor: pointer;
     border: none;
@@ -55,24 +34,8 @@ button.normal{
     transition: 0.2s;
 }
 
-button.white{
-    font-size: 13px;
-    font-weight: 600;
-    padding: 11px 18px;
-    color: #fff;
-    background-color: transparent;
-    cursor: pointer;
-    border: 1px solid;
-    outline: none;
-    transition: 0.2s;
-}
-
-    
-    body{
-    width: 100%;
-}
-
-/* Header Start */
+button.normal { color: #000; background-color: #fff; }
+button.white { color: #fff; background-color: transparent; border: 1px solid; }
 
 #header{
     display: flex;
@@ -86,47 +49,63 @@ button.white{
     top: 0;
     left: 0;
 }
-
-#navbar{
+ /* Navigation bar styling */
+ #navbar {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
-    align-items: center;
+    background-color: #E3E6F3;
     justify-content: center;
 }
 
-#navbar li{
-    list-style: none;
-    padding: 0 20px;
+#navbar li {
     position: relative;
 }
 
-#navbar li a{
+#navbar a {
+    display: block;
+    padding: 15px;
+    color: rgb(13, 11, 11);
     text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    color: #1a1a1a;
-    transition: 0.3s ease;
 }
 
-#navbar li a:hover,
-#navbar li a.active{
-    color:#088178;
+#navbar a:hover {
+    background-color: #555;
 }
 
-#navbar li a.active::after,
-#navbar li a:hover::after{
-    content: "";
-    width: 30%;
-    height: 2px;
-    background: #088178;
+/* Dropdown menu styling */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
     position: absolute;
-    bottom: -4px;
-    left: 20px;
+    background-color: #f3e6e6;
+    min-width: 150px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
 
-/* Home Page */
+.dropdown-content a {
+    padding: 12px;
+    display: block;
+    color: rgb(230, 106, 106);
+    text-decoration: none;
+}
 
-#hero{
-    background-image: url(shpping4.png);
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/* Hero Section */
+#hero {
+    background-image: url(image/shpping4.png);
     height: 80vh;
     width: 100%;
     background-size: cover;
@@ -138,94 +117,48 @@ button.white{
     justify-content: center;
 }
 
-#hero h4{
-    padding-bottom: 15px;
-}
+#hero h4 { padding-bottom: 15px; }
+#hero h1 { color: #ffff00; }
+#hero button { background-color: transparent; color: #088178; border: 0; padding: 14px 80px 14px 65px; cursor: pointer; font-weight: 700; font-size: 15px; }
 
-#hero h1{
-    color: #ffff00;
-}
-
-#hero button{
-    background-image: url();
-    background-color: transparent;
-    color: #088178;
-    border: 0;
-    padding: 14px 80px 14px 65px;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 15px;
-}  
-  
+/* Feature Section */
 #feature {
     display: flex;
-   /* align-items: center;*/
     justify-content: space-between;
+    flex-wrap: wrap;
     padding-top: 20px;
 }
 
-#feature .fe-box{
+#feature .fe-box {
     width: 180px;
     text-align: center;
     padding: 25px 15px;
     box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
     border: 1px solid #cce7d0;
     border-radius: 4px;
-    margin: 15px 0;;
+    margin: 15px 0;
+    transition: 0.2s;
 }
 
-#feature .fe-box:hover{
-    box-shadow: 10px 10px 54px rgba(70, 62, 221, 0.1);
-}
+#feature .fe-box:hover { box-shadow: 10px 10px 54px rgba(70, 62, 221, 0.1); }
 
-#feature .fe-box img{
-    width: 100%;
-    margin-bottom: 10px;
-}
+#feature .fe-box:nth-child(2) h6 { background-color: #cdebbc; }
+#feature .fe-box:nth-child(3) h6 { background-color: #cdebb2; }
+#feature .fe-box:nth-child(4) h6 { background-color: #cdebb8; }
+#feature .fe-box:nth-child(5) h6 { background-color: #cdebb6; }
+#feature .fe-box:nth-child(6) h6 { background-color: #cdebb5; }
 
-#feature .fe-box h6{
-    display: inline-block;
-    padding: 9px 8px 6px 8px;
-    line-height: 1;
-    border-radius: 4px;
-    color: #088178;
-    background-color: #fddde4;
-    
-}
-    
-#feature .fe-box h6:nth-child(2) h6{
-    background-color:#cdebbc;
-}
+/* Product Section */
+#Product1 { text-align: center; }
 
-#feature .fe-box h6:nth-child(3) h6{
-    background-color:#cdebb2;
-}
-
-#feature .fe-box h6:nth-child(4) h6{
-    background-color:#cdebb8;
-}
-
-#feature .fe-box h6:nth-child(5) h6{
-    background-color:#cdebb6;
-}
-
-#feature .fe-box h6:nth-child(6) h6{
-    background-color:#cdebb5;
-}
-
-#Product1{
-    text-align: center;
-}
-
-#Product1 .pro-container{
+#Product1 .pro-container {
     display: flex;
-    justify-content: space-between;
-    padding-top: 20px;
+    justify-content: center;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
-#Product1 .pro{
+#Product1 .pro {
     width: 23%;
     min-width: 250px;
     padding: 10px 12px;
@@ -234,162 +167,50 @@ button.white{
     cursor: pointer;
     box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
     margin: 15px 0;
-    transition: 0.2s ease;
+    transition: 0.2s;
     position: relative;
 }
 
-#Product1 .pro:hover{
-    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
-}
+#Product1 .pro:hover { box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06); }
 
-#Product1 .pro img{
-    width: 100%;
-    border-radius: 20px;
-}
-
-#Product1 .pro .des{
-    text-align: start;
-    padding: 10px 0;
-}
-
-#Product1 .pro .des span{
-    color: #606063;
-    font-size: 12px;
-}
-
-#Product1 .pro .des h5{
-    padding-top: 7px;
-    color: #1a1a1a;
-    font-size: 14px;
-}
-
-#Product1 .pro .des i{
-    font-size: 12px;
-    color: rgb(243, 181, 25);
-}
-
-#Product1 .pro .des h4{
-    padding-top: 7px;
-    font-size: 15px;
-    font-weight: 700;
-    color: #088178;
-}
-
-#Product1 .pro .cart{
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 50px;
-    background-color: #e8f6ea;
-    font-weight: 500;
-    color: #088178;
-    border: 5px solid #cce7d0;
-    position: absolute;
-    bottom: 20px;
-    right: 10px;
-}
-
-#banner{
+/* Banner Section */
+#banner {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: url(back.png);
+    background-image: url(image/logo/back.png);
     width: 100%;
     height: 40vh;
     background-size: cover;
     background-position: center;
 }
 
-#banner h4{
-    font-size: 16px;
-    color: #fff;
-}
+#banner h4, #banner h2 { color: #fff; }
+#banner h2 span { color: #ef3636; }
+#banner button:hover { background: #088178; color: #fff; }
 
-#banner h2{
-    font-size: 40px;
-    padding: 10px 0;
-}
-
-#banner h2 span{
-    color: #ef3636;
-}
-
-#banner button:hover{
-    background: #088178;
-    color: #fff;
-}
-
-#sm-banner{
+/* Small Banners */
+#sm-banner, #banner3 {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
-#sm-banner .banner-box{
+#sm-banner .banner-box, #banner3 .banner-box {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    background-image: url(happy.png);
-    min-width: 580px;
+    width: 100%;
+    max-width: 580px;
     height: 50vh;
     background-size: cover;
     background-position: center;
     padding: 30px;
 }
 
-#sm-banner .banner-box2{
-    background-image: url(happy1.png);
-}
-
-#sm-banner h4{
-    color: black;
-    font-size: 20px;
-    font-weight: 300;
-}
-
-#sm-banner h2{
-    color:black;
-    font-size: 28px;
-    font-weight: 800;
-}
-
-#sm-banner span{
-    color: black;
-    font-size: 14px;
-    font-weight: 500;
-    padding-bottom: 15px;
-}
-
-#sm-banner .banner-box:hover button{
-    background: #088178;
-    border: 1px solid #088178;
-}
-
-#banner3 .banner-box{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    background-image: url(happy.png);
-    min-width: 30%;
-    height: 30vh;
-    background-size: cover;
-    background-position: center;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-#banner3 h2{
-    color: #000;
-    font-weight: 900;
-    font-size: 22px;
-}
-
-#banner3 h3{
-    color: #ec544e;
-    font-weight: 800;
-    font-size: 15px;
-}
+#banner3 h2 { color: #000; font-weight: 900; font-size: 22px; }
+#banner3 h3 { color: #ec544e; font-weight: 800; font-size: 15px; }

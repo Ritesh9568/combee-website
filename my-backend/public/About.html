@@ -7,45 +7,33 @@
         <title>Combee</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
         <link rel="stylesheet" href="About.css">
-        <style type="text/css">
-            /* (Insert the updated CSS below) */
-        </style>
     </head>
 
-    <body background="1_5.jpg">
+    <body background="image/logo/1_5.jpg">
         <!-- Header with logo and navigation -->
-        <header id="header">
-            <div class="header-content">
-                <div class="logo">
-                    <img src=" combee logo.jpg" alt="Combee Logo" /> <!-- Logo image -->
-                </div>
-                <nav class="navbar">
-                    <ul>
-                        <li><a href="Combee.html">Home</a></li>
-                        <li><a href="Shop.html">Shop</a></li>
-                        <li><a href="About.html">About-us</a></li>
-                        <li><a href="Order.html">Order-page</a></li>
-                        <li><a href="Contact.html">Contact</a></li>
-                        <li><a href="Feedback.html">Feedback</a></li>
-                        <li><a href="loginpage.html">Login</a></li>
-                        <li><a href="SignUp.html">Sign Up</a></li>
-                        <li><a href=""><i class="fa-solid fa-cart-shopping"></i></a></li>
-                    </ul>
-                </nav>
-                <div class="search-container">
-                    <input class="input" type="text" placeholder="Search...">
-                    <svg viewBox="0 0 24 24" class="search__icon">
-                        <g>
-                            <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
-                        </g>
-                    </svg>
-                </div>
-            </div>
-        </header>
-
-        <div class="card">
+        <section id="header" style="margin: 0; padding: 10px 10px; position: fixed; width: 100%; top: 0; left: 0; background: #E3E6F3; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06); z-index: 999; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+            <a href="index.html"><img src="image/logo.jpg" class="logo" alt="COMBEE Logo" style="width: 30px; height: 50px; vertical-align: middle;"> COMBEE</a>
+            <ul id="navbar" style="display: flex; list-style: none; padding: 0; margin: 0; justify-content: center; flex-wrap: wrap;">
+                <li><a class="active" href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="Shop.html">Shop &#9662;</a>
+                    <div class="dropdown-content">
+                        <a href="Kids.html">Kids</a>
+                        <a href="Adult.html">Adults</a>
+                        <a href="Seniors.html">Seniors</a>
+                    </div>
+                </li>
+                <li><a href="Loginpage.html">Login</a></li>
+                <li><a href="About.html">About-us</a></li>
+                <li><a href="Order.html">Order-page</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="Cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+            </ul>
+        </section>
+        
+        <div class="card" style="margin-top: 100px;">
             <div class="card-front">
-                <img src="about.jpg" alt="Shruti Gunde">
+                <img src="image/about.jpg" alt="Shruti Gunde">
                 <div class="name-container">
                     <p class="title">Shruti Gunde</p>
                     <p class="subtitle">Founder</p>
@@ -55,6 +43,5 @@
                 <p>I had established this Combee store as the start of my life.</p>
             </div>
         </div>
-
     </body>
 </html>

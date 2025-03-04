@@ -1,49 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <title>Responsive Payment Gateway page</title>
-        <link rel="stylesheet" href="Payment.css">
-    </head>
-    <body>
-        <div class="container">
-            <form action="">
-                <div class="row">
-                    <div class="column">
-                        <h2 class="title">Billing Address</h2>
-                        <div class="input-box">
-                            <span>Full Name :</span>
-                            <input type="text" placeholder="Enter your Name">
-                        </div>
-                        <div class="input-box">
-                            <span>Email :</span>
-                            <input type="email" placeholder="Enter your Email">
-                        </div>
-                        <div class="input-box">
-                            <span>Address :</span>
-                            <input type="text" placeholder="Enter Address">
-                        </div>
-                        <div class="input-box">
-                            <span>City :</span>
-                            <input type="text" placeholder="City">
-                        </div>
-                        <div class="input-box">
-                            <span>State :</span>
-                            <input type="text" placeholder="State">
-                        </div>
-                        <div class="input-box">
-                            <span>Pin Code :</span>
-                            <input type="number" placeholder="">
-                        </div>
-                        <div>
-                            <a href="payment1.html" class="btn">Submit & Next </a>
-                           
-                        </div>
-                    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Payment Gateway</title>
+    <link rel="stylesheet" href="Payment.css">
+</head>
+<body>
+
+    <section id="header">
+        <a href=""><img src="image/logo.jpg" class="logo" alt="COMBEE Logo" style="width: 50px; height: 50px; vertical-align: middle;"> COMBEE</a>
+        <ul id="navbar">
+            <li><a class="active" href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="Shop.html">Shop &#9662;</a>
+                <div class="dropdown-content">
+                    <a href="Kids.html">Kids</a>
+                    <a href="Adult.html">Adults</a>
+                    <a href="Seniors.html">Seniors</a>
                 </div>
-            </form>
-        </div>
-    </body>
+            </li>
+            <li><a href="Loginpage.html">Login</a></li>
+            <li><a href="About.html">About-us</a></li>
+            <li><a href="Order.html">Order-page</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            <li><a href="Cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+        </ul>
+    </section>
+    
+    <div class="container">
+        <form id="paymentForm">
+            <div class="row">
+                <div class="column">
+                    <h2 class="title">Billing Address</h2>
+                    
+                    <div class="input-box">
+                        <span>Full Name :</span>
+                        <input type="text" id="fullName" readonly>
+                    </div>
+
+                    <div class="input-box">
+                        <span>Email :</span>
+                        <input type="email" id="email" readonly>
+                    </div>
+
+                    <div class="input-box">
+                        <span>Address :</span>
+                        <input type="text" id="address" readonly>
+                    </div>
+
+                    <div class="input-box">
+                        <span>City :</span>
+                        <input type="text" id="city" readonly>
+                    </div>
+
+                    <div class="input-box">
+                        <span>State :</span>
+                        <input type="text" id="state" readonly>
+                    </div>
+
+                    <div class="input-box">
+                        <span>Pin Code :</span>
+                        <input type="number" id="pin" readonly>
+                    </div>
+
+                    <div class="input-box">
+                        <span>Total Amount :</span>
+                        <input type="text" id="totalAmount" readonly>
+                    </div>
+
+                    <h2 class="title">Payment Method</h2>
+
+                    <div class="input-box">
+                        <input type="radio" name="paymentMethod" value="creditCard" required> Credit/Debit Card<br>
+                        <input type="radio" name="paymentMethod" value="upi"> UPI<br>
+                        <input type="radio" name="paymentMethod" value="cod"> Cash on Delivery (COD)
+                    </div>
+
+                    <button type="submit" class="btn">Proceed to Payment</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", async function () {
+            // Fetch order details from localStorage or API
+            const orderData = JSON.parse(localStorage.getItem("orderDetails"));
+
+            if (orderData) {
+                document.querySelector("input[placeholder='Enter your Name']").value = orderData.name || "";
+                document.querySelector("input[placeholder='Enter your Email']").value = orderData.email || "";
+                document.querySelector("input[placeholder='Enter Address']").value = orderData.address || "";
+                document.querySelector("input[placeholder='City']").value = orderData.city || "";
+                document.querySelector("input[placeholder='State']").value = orderData.state || "";
+                document.querySelector("input[placeholder='']").value = orderData.pinCode || "";
+            }
+
+            document.querySelector(".btn").addEventListener("click", async function (event) {
+                event.preventDefault();
+
+                const paymentData = {
+                    name: document.querySelector("input[placeholder='Enter your Name']").value,
+                    email: document.querySelector("input[placeholder='Enter your Email']").value,
+                    address: document.querySelector("input[placeholder='Enter Address']").value,
+                    city: document.querySelector("input[placeholder='City']").value,
+                    state: document.querySelector("input[placeholder='State']").value,
+                    pinCode: document.querySelector("input[placeholder='']").value,
+                    paymentMethod: "Credit Card", // Example, can be dynamic
+                    amount: orderData.totalAmount || 0
+                };
+
+                const response = await fetch("http://localhost:5000/api/payment", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(paymentData),
+                });
+
+                const result = await response.json();
+                alert(result.message);
+            });
+        });
+    </script>
+</body>
 </html>

@@ -11,67 +11,71 @@ body {
 }
 
 /* Header styles */
-#header {
-    background-color: #2c3e50;
-    color: #ecf0f1;
-    width: 100%;
-    position: fixed; /* Fix the header at the top */
+#header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background: #E3E6F3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    position: sticky;
     top: 0;
     left: 0;
-    z-index: 10;
-    padding: 10px 20px;
-    box-sizing: border-box; /* Include padding in width calculation */
 }
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px; /* Limit width for content */
-    margin: 0 auto; /* Center the content */
-}
-
-.logo img {
-    height: 80px; /* Adjust height of the logo */
-    width: auto; /* Maintain aspect ratio */
-}
-
-.navbar ul {
+ /* Navigation bar styling */
+ #navbar {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 20px;
+    background-color: #E3E6F3;
+    justify-content: center;
 }
 
-.navbar li a {
-    color: #ecf0f1;
+#navbar li {
+    position: relative;
+}
+
+#navbar a {
+    display: block;
+    padding: 15px;
+    color: rgb(13, 11, 11);
     text-decoration: none;
-    font-size: 16px;
 }
 
-.navbar li a:hover {
-    color: #3498db;
+#navbar a:hover {
+    background-color: #555;
 }
 
-/* Search container styles */
-.search-container {
-    display: flex;
-    align-items: center;
+/* Dropdown menu styling */
+.dropdown {
+    position: relative;
 }
 
-.input {
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
-    margin-left: 10px;
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f3e6e6;
+    min-width: 150px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
 
-.search__icon {
-    fill: #ecf0f1;
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
+.dropdown-content a {
+    padding: 12px;
+    display: block;
+    color: rgb(230, 106, 106);
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 /* Card Styling */

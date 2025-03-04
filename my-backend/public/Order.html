@@ -1,136 +1,253 @@
-<DOCTYPE html>
-    <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, intial-scale=1.0">
-            <title>Combee</title>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
-            <link rel="stylesheet" href="Order.css">
-            <style>
-                body {
-                    font-family: Arial, sans-serif;
-                    margin: 0;
-                    padding: 0;
-                    box-sizing: border-box;
-                }
-
-                #header {
-                    display: flex;
-                   align-items: center;
-                  justify-content: space-between;
-                   padding: 20px 80px;
-                  background: #E3E6F3;
-                     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
-                     z-index: 999;
-                     position: sticky;
-                     top: 0;
-                     left: 0;
-                     right: 0;
-                }
-
-                #header .logo {
-                    height: 50px;
-                }
-
-                #order-form {
-                    max-width: 600px;
-                    margin: 50px auto;
-                    padding: 20px;
-                    border: 1px solid #ccc;
-                    border-radius: 5px;
-                    background-color: #f9f9f9;
-                }
-
-                #order-form h2 {
-                    text-align: center;
-                    margin-bottom: 20px;
-                }
-
-                #order-form label {
-                    display: block;
-                    margin-bottom: 5px;
-                }
-
-                #order-form input,
-                #order-form select {
-                    width: 100%;
-                    padding: 10px;
-                    margin-bottom: 15px;
-                    border: 1px solid #ccc;
-                    border-radius: 5px;
-                }
-
-                #order-form button {
-                    width: 100%;
-                    padding: 10px;
-                    background-color: #333;
-                    color: #fff;
-                    border: none;
-                    border-radius: 5px;
-                    cursor: pointer;
-                }
-
-                #order-form button:hover {
-                    background-color: #555;
-                }
-            </style>
-        </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Page</title>
     
-        <body style="background-image: url('back.png'); background-size: cover; background-position: center;">
-        
-            <section id="header">
-            <a href="Combee.html"><img src="logo.jpg" class="logo" alt="Combee">COMBEE</a>
-            <ul id="navbar">
-                <li><a href="Combee.html">Home</a></li>
-                <li><a href="Shop.html">Shop</a></li>
-                <li><a href="About.html">About-us</a></li>
-                <li><a href="Order.html">Order-page</a></li>
-                <li><a href="Contact.html">Contact</a></li>
-                <li><a href="Feedback.html">Feedback</a></li>
-                <li><a href="loginpage.html">Login</a></li>
-                <li><a href="SignUp.html">Sign Up</a></li>
-                <li><a href=""><i class="fa-solid fa-cart-shopping"></i></a></li>
-             </ul>
-            </section>
-    <section id="order-form">
-        
-        <h2>Place Your Order</h2>
-        <form id="orderForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="address">Address:</label>
-            <input type="text" id="address" name="address" required>
-            
-            <label for="product">Product:</label>
-            <select id="product" name="product" required>
-                <option value="shirt">Shirt</option>
-                <option value="pants">Pants</option>
-                <option value="jacket">Jacket</option>
-            </select>
-            
-            <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" name="quantity" min="1" required>
-            
-            <button type="submit">Submit Order</button>
-        </form>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            background-image:url('image/logo/1_5.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding-top: 80px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 80px; /* Reduced padding to move it up */
+    background: #E3E6F3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    position: fixed; /* Changed from sticky to fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+ /* Navigation bar styling */
+ #navbar {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    background-color: #E3E6F3;
+    justify-content: center;
+}
+
+#navbar li {
+    position: relative;
+}
+
+#navbar a {
+    display: block;
+    padding: 15px;
+    color: rgb(13, 11, 11);
+    text-decoration: none;
+}
+
+#navbar a:hover {
+    background-color: #555;
+}
+
+/* Dropdown menu styling */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f3e6e6;
+    min-width: 150px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    padding: 12px;
+    display: block;
+    color: rgb(230, 106, 106);
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+        }
+
+        .card {
+            background: rgba(235, 177, 220, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s ease-in-out;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        /* Smooth Fade-In Effect */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Input Focus Effect */
+        input:focus, select:focus {
+            border-color: #2563eb;
+            box-shadow: 0px 0px 10px rgba(37, 99, 235, 0.5);
+            transition: all 0.2s ease-in-out;
+        }
+
+        /* Button Hover & Click Effect */
+        .btn {
+            transition: transform 0.2s ease-in-out, background 0.3s;
+        }
+        .btn:hover {
+            background: #3b82f6;
+            transform: scale(1.05);
+        }
+        .btn:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+
+    <section id="header">
+        <a href=""><img src="image/logo.jpg" class="logo" alt="COMBEE Logo" style="width: 50px; height: 50px; vertical-align: middle;"> COMBEE</a>
+        <ul id="navbar">
+            <li><a class="active" href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="Shop.html">Shop &#9662;</a>
+                <div class="dropdown-content">
+                    <a href="Kids.html">Kids</a>
+                    <a href="Adult.html">Adults</a>
+                    <a href="Seniors.html">Seniors</a>
+                </div>
+            </li>
+            <li><a href="Loginpage.html">Login</a></li>
+            <li><a href="About.html">About-us</a></li>
+            <li><a href="Order.html">Order-page</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            <li><a href="Cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+        </ul>
     </section>
 
+    <!-- Centered Container -->
+    <div class="container">
+        <div class="card">
+            <h2 class="text-2xl font-semibold text-center mb-4">Clothing Order Form</h2>
+            <form id="orderForm">
+                <div class="mb-4">
+                    <label class="block font-medium">Name</label>
+                    <input type="text" id="name" name="name" class="w-full p-2 border rounded focus:ring" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block font-medium">Email</label>
+                    <input type="email" id="email" name="email" class="w-full p-2 border rounded focus:ring" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block font-medium">Contact Number</label>
+                    <input type="tel" id="contact" name="contact" class="w-full p-2 border rounded focus:ring" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block font-medium">Address</label>
+                    <input type="text" id="address" name="address" class="w-full p-2 border rounded focus:ring" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block font-medium">City</label>
+                    <input type="text" id="city" name="city" class="w-full p-2 border rounded focus:ring" required>
+                </div>
+                <h3 class="text-lg font-medium mb-2">Products</h3>
+                <div class="mb-4">
+                    <label class="block font-medium">T-shirt</label>
+                    <div class="flex items-center space-x-2">
+                        <input type="number" name="tshirt_quantity" min="1" value="1" class="w-16 p-2 border rounded focus:ring" required>
+                        <select name="tshirt_size" class="p-2 border rounded focus:ring">
+                            <option value="">Size</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                        </select>
+                        <select name="tshirt_color" class="p-2 border rounded focus:ring">
+                            <option value="">Color</option>
+                            <option value="Red">Red</option>
+                            <option value="Blue">Blue</option>
+                            <option value="Green">Green</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="block font-medium">Send as Gift?</label>
+                    <div class="flex items-center space-x-4">
+                        <label><input type="radio" name="gift" value="yes" class="mr-1"> Yes</label>
+                        <label><input type="radio" name="gift" value="no" class="mr-1" checked> No</label>
+                    </div>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-500 btn">
+                    <a href="payment.html">Place Order</a>
+                </button>
+            </form>
+            <p class="mt-4 text-center text-sm">© <span id="year"></span> COMBEE Clothing. All Rights Reserved</p>
+        </div>
+    </div>
+
     <script>
-        document.getElementById('orderForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const address = document.getElementById('address').value;
-            const product = document.getElementById('product').value;
-            const quantity = document.getElementById('quantity').value;
-            
-            alert(`Order Details:\nName: ${name}\nEmail: ${email}\nAddress: ${address}\nProduct: ${product}\nQuantity: ${quantity}`);
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        document.getElementById('orderForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                contact: document.getElementById('contact').value,
+                address: document.getElementById('address').value,
+                city: document.getElementById('city').value,
+                tshirt_quantity: document.querySelector('input[name="tshirt_quantity"]').value,
+                tshirt_size: document.querySelector('select[name="tshirt_size"]').value,
+                tshirt_color: document.querySelector('select[name="tshirt_color"]').value,
+                gift: document.querySelector('input[name="gift"]:checked').value
+            };
+
+            try {
+                const response = await fetch('http://localhost:5000/orders/create', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+                alert(result.message);
+            } catch (error) {
+                console.error("Error submitting order:", error);
+            }
         });
     </script>
+
 </body>
 </html>
